@@ -1,0 +1,16 @@
+[Unit]
+Description=Raspberry Pi Manager
+After=network.target
+
+[Service]
+WorkingDirectory=/usr/bin/piman
+ExecStart=/usr/bin/python3 /usr/bin/piman/monitoring-server.py
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=15
+User=root
+
+[Install]
+WantedBy=multi-user.target
+

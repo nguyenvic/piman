@@ -1,0 +1,16 @@
+[Unit]
+Description=Raspberry Pi Manager
+After=network.target
+
+[Service]
+Type=simple
+#WorkingDirectory=/usr/bin/piman/monitoring
+WorkingDirectory=/home/cs158b/auckland/monitoring
+#ExecStart=/usr/bin/piman/monitoring/monitoring_piman.sh
+ExecStart=/home/cs158b/auckland/monitoring/grafana.sh
+Restart=always
+RestartSec=15
+User=root
+
+[Install]
+WantedBy=default.target
